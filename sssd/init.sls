@@ -20,8 +20,6 @@ sssd_conf:
     - template: jinja
     - context:
       config: {{ sssd.settings.sssd_conf }}
-    - watch_in:
-      - service: sssd_service
     - require:
       - pkg: sssd
 {% if grains['os_family'] == 'RedHat' %}
